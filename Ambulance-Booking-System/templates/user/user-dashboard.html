@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emergency Ambulance Service | Saran District</title>
+    <meta name="description" content="24/7 emergency ambulance services in Saran District. Quick response, life-saving equipment, and professional medical staff.">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #d32f2f;
+        --primary-dark: #b71c1c;
+        --secondary: #1565c0;
+        --accent: #43a047;
+        --dark: #2c2c2c;
+        --light: #f8f9fa;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+      
+      h1, h2, h3, h4, h5 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+      }
+      
+      .navbar {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar-brand {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--primary) !important;
+      }
+      
+      .navbar-brand i {
+        margin-right: 8px;
+      }
+      
+      .navbar-nav .nav-link {
+        color: var(--dark) !important;
+        font-weight: 500;
+        margin: 0 0.5rem;
+        position: relative;
+      }
+      
+      .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+      
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        width: 100%;
+      }
+      
+      .hero-section {
+        padding: 6rem 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(21, 101, 192, 0.8), rgba(211, 47, 47, 0.8));
+        z-index: 1;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .hero-content p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .hero-buttons .btn {
+        margin: 0.5rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .section-padding {
+        padding: 6rem 0;
+      }
+      
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      
+      .section-title h2 {
+        display: inline-block;
+        padding-bottom: 15px;
+        position: relative;
+      }
+      
+      .section-title h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+      
+      .service-card {
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        background: #fff;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: none;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .service-card img {
+        max-width: 100px;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .service-card:hover img {
+        transform: scale(1.1);
+      }
+      
+      .service-card h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .service-card p {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+      
+      .service-features {
+        text-align: left;
+        margin-top: 1rem;
+        padding: 0;
+      }
+      
+      .service-features li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 25px;
+        list-style: none;
+      }
+      
+      .service-features li::before {
+        content: '\f26e';
+        font-family: bootstrap-icons;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: var(--accent);
+      }
+      
+      .stats-container {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        color: white;
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .stat-item {
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      
+      .stat-label {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .tracking-section {
+        background: url('https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3') center/cover no-repeat;
+        position: relative;
+        padding: 6rem 0;
+      }
+      
+      .tracking-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      
+      .tracking-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+      
+      .map-container {
+        height: 400px;
+        background: #e9ecef;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .map-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(45deg, #6c757d, #495057);
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      .tracking-info {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .tracking-progress {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 1.5rem 0;
+      }
+      
+      .tracking-progress-bar {
+        height: 100%;
+        width: 65%;
+        background: var(--accent);
+        border-radius: 4px;
+      }
+      
+      .symptom-checker {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+      
+      .symptom-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        background: #f8f9fa;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-left: 4px solid transparent;
+      }
+      
+      .symptom-item:hover {
+        background: #e9ecef;
+        border-left-color: var(--primary);
+      }
+      
+      .symptom-item.selected {
+        background: #e3f2fd;
+        border-left-color: var(--secondary);
+      }
+      
+      .calculator-container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+      
+      .calculator-result {
+        background: var(--primary);
+        color: white;
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+      
+      .calculator-result h3 {
+        margin-bottom: 1rem;
+      }
+      
+      .price-display {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+      
+      .footer-links h5 {
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      
+      .footer-links h5::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+        bottom: 0;
+        left: 0;
+      }
+      
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 0.75rem;
+      }
+      
+      .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      
+      .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+      
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+      
+      .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        margin-top: 3rem;
+        text-align: center;
+      }
+      
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+      }
+      
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+      
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      }
+      
+      .back-to-top {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      
+      .back-to-top.show {
+        opacity: 1;
+      }
+      
+      .modal-content {
+        border-radius: 15px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      
+      .modal-header {
+        background: var(--primary);
+        color: white;
+        border-bottom: none;
+      }
+      
+      .btn-primary {
+        background: var(--primary);
+        border: none;
+      }
+      
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+      
+      .btn-outline-primary {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background: var(--primary);
+        color: white;
+      }
+      
+      .form-control:focus, .form-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.25);
+      }
+      
+      /* Animation classes */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      
+      .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        
+        .section-padding {
+          padding: 4rem 0;
+        }
+        
+        .stat-number {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="bi bi-ambulance"></i>Saran Ambulance</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tracking">Live Tracking</a></li>
+            <li class="nav-item"><a class="nav-link" href="#symptom">Symptom Checker</a></li>
+            <li class="nav-item"><a class="nav-link" href="#calculator">Price Calculator</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary ms-2" href="tel:8008280020">
+                <i class="bi bi-telephone"></i> 8008280020
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content text-white">
+          <h1 class="animate__animated animate__fadeInDown">Emergency Ambulance Service in Saran District</h1>
+          <p class="animate__animated animate__fadeIn animate__delay-1s">24/7 medical transportation with life-saving equipment and professional paramedics. Serving all areas of Saran with rapid response.</p>
+          <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-1s">
+            <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">
+              <i class="bi bi-plus-circle"></i> Book Ambulance Now
+            </button>
+            <a href="tel:8008280020" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-telephone"></i> Emergency Call: 8008280020
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="stats-container">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="stat-item">
+                <div class="stat-number" id="responseTime">8 min</div>
+                <div class="stat-label">Avg. Response Time</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item">
+                <div class="stat-number" id="ambulances">42+</div>
+                <div class="stat-label">Ambulances</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item">
+                <div class="stat-number" id="patients">15,000+</div>
+                <div class="stat-label">Patients Served</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Service Availability</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Medical Services</h2>
+          <p class="text-muted">Comprehensive emergency transport solutions for all medical needs</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050943.png" alt="Basic Ambulance" class="img-fluid">
+              <h5>Basic Life Support</h5>
+              <p>Essential medical transport with trained EMTs and basic equipment for stable patients.</p>
+              <ul class="service-features">
+                <li>First aid equipment</li>
+                <li>Oxygen supply</li>
+                <li>Stretcher & wheelchair</li>
+                <li>Emergency medication</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050944.png" alt="Advanced Life Support">
+              <h5>Advanced Life Support</h5>
+              <p>Critical care transport with paramedics, cardiac monitoring, and advanced interventions.</p>
+              <ul class="service-features">
+                <li>Cardiac monitor/defibrillator</li>
+                <li>Ventilator support</li>
+                <li>IV medications</li>
+                <li>Advanced airway management</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050942.png" alt="Neonatal Ambulance">
+              <h5>Neonatal & Pediatric Transport</h5>
+              <p>Specialized transport for infants and children with pediatric-trained staff and equipment.</p>
+              <ul class="service-features">
+                <li>Neonatal incubator</li>
+                <li>Pediatric ventilators</li>
+                <li>Specialized monitoring</li>
+                <li>Child life specialist</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050941.png" alt="Air Ambulance">
+              <h5>Air Ambulance</h5>
+              <p>Rapid long-distance transport via helicopter or fixed-wing aircraft for critical patients.</p>
+              <ul class="service-features">
+                <li>Inter-hospital transfers</li>
+                <li>Remote area access</li>
+                <li>ICU-level care in flight</li>
+                <li>Nationwide coverage</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050940.png" alt="Mortuary Van">
+              <h5>Mortuary & Funeral Services</h5>
+              <p>Dignified transportation for deceased individuals with temperature-controlled vehicles.</p>
+              <ul class="service-features">
+                <li>Body freezer van</li>
+                <li>Funeral assistance</li>
+                <li>Religious rites support</li>
+                <li>Long-distance transport</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="service-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/3050/3050939.png" alt="Event Medical">
+              <h5>Event Medical Coverage</h5>
+              <p>On-site medical teams and ambulances for festivals, sports events, and large gatherings.</p>
+              <ul class="service-features">
+                <li>First aid stations</li>
+                <li>Rapid response teams</li>
+                <li>Emergency transport</li>
+                <li>Mass casualty preparedness</li>
+              </ul>
+              <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Tracking Section -->
+    <section id="tracking" class="tracking-section">
+      <div class="tracking-overlay"></div>
+      <div class="container">
+        <div class="tracking-content">
+          <div class="section-title">
+            <h2 class="text-white">Live Ambulance Tracking</h2>
+            <p class="text-light">Real-time location monitoring for your peace of mind</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-6 animate-on-scroll">
+              <div class="map-container">
+                <div class="map-placeholder">
+                  <div>
+                    <i class="bi bi-geo-alt-fill display-4 mb-3"></i>
+                    <h4>Live Ambulance Tracking</h4>
+                    <p>Real-time location updates for dispatched vehicles</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 animate-on-scroll">
+              <div class="tracking-info">
+                <h4>Ambulance #MED102</h4>
+                <p class="mb-0">Enroute to Patient Location</p>
+                
+                <div class="d-flex justify-content-between mt-3">
+                  <div>
+                    <small>Pickup Point</small>
+                    <p class="mb-0">Chapra City Hospital</p>
+                  </div>
+                  <div class="text-end">
+                    <small>Destination</small>
+                    <p class="mb-0">Patna Medical College</p>
+                  </div>
+                </div>
+                
+                <div class="tracking-progress mt-4">
+                  <div class="tracking-progress-bar"></div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-2">
+                  <span>Departure</span>
+                  <span>65% Complete</span>
+                  <span>Destination</span>
+                </div>
+                
+                <div class="mt-4">
+                  <h5>Estimated Arrival</h5>
+                  <div class="d-flex">
+                    <div class="me-4">
+                      <small>To Patient</small>
+                      <p class="h4 mb-0">8 min</p>
+                    </div>
+                    <div>
+                      <small>To Hospital</small>
+                      <p class="h4 mb-0">42 min</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="btn btn-light w-100 mt-4">
+                  <i class="bi bi-share"></i> Share Location with Family
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Symptom Checker -->
+    <section id="symptom" class="section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>Symptom Checker & Emergency Guidance</h2>
+          <p class="text-muted">Assess your emergency situation and get immediate recommendations</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="symptom-checker">
+              <h4 class="mb-4">Select Symptoms:</h4>
+              
+              <div class="symptom-item" data-symptom="chest-pain">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="chestPain">
+                  <label class="form-check-label fw-bold" for="chestPain">Chest Pain or Discomfort</label>
+                </div>
+                <p class="mb-0 mt-1 small">Pressure, squeezing, or pain in center of chest</p>
+              </div>
+              
+              <div class="symptom-item" data-symptom="breathing">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="breathing">
+                  <label class="form-check-label fw-bold" for="breathing">Difficulty Breathing</label>
+                </div>
+                <p class="mb-0 mt-1 small">Shortness of breath or gasping for air</p>
+              </div>
+              
+              <div class="symptom-item" data-symptom="bleeding">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="bleeding">
+                  <label class="form-check-label fw-bold" for="bleeding">Severe Bleeding</label>
+                </div>
+                <p class="mb-0 mt-1 small">Uncontrolled bleeding that doesn't stop with pressure</p>
+              </div>
+              
+              <div class="symptom-item" data-symptom="stroke">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="stroke">
+                  <label class="form-check-label fw-bold" for="stroke">Stroke Symptoms</label>
+                </div>
+                <p class="mb-0 mt-1 small">Face drooping, arm weakness, speech difficulty</p>
+              </div>
+              
+              <div class="symptom-item" data-symptom="head">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="head">
+                  <label class="form-check-label fw-bold" for="head">Head Injury with Loss of Consciousness</label>
+                </div>
+                <p class="mb-0 mt-1 small">Head trauma followed by confusion or unconsciousness</p>
+              </div>
+              
+              <div class="mt-4">
+                <button class="btn btn-primary w-100" id="analyzeSymptoms">
+                  <i class="bi bi-heart-pulse"></i> Analyze Symptoms
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="card h-100 border-0 shadow-lg">
+              <div class="card-body p-4">
+                <h4 class="mb-4">Emergency Response Recommendation</h4>
+                <div class="alert alert-danger" id="emergencyAlert" style="display: none;">
+                  <h5><i class="bi bi-exclamation-triangle-fill"></i> Critical Emergency Detected!</h5>
+                  <p class="mb-0">Based on your symptoms, immediate medical attention is required.</p>
+                </div>
+                
+                <div id="recommendationResult">
+                  <div class="text-center py-5">
+                    <i class="bi bi-clipboard2-heart display-4 text-muted mb-3"></i>
+                    <h5>No symptoms selected</h5>
+                    <p class="text-muted">Select symptoms above to get emergency recommendations</p>
+                  </div>
+                </div>
+                
+                <div class="mt-4" id="actionButtons" style="display: none;">
+                  <button class="btn btn-danger w-100 mb-2" id="callAmbulance">
+                    <i class="bi bi-telephone"></i> Call Emergency Ambulance Now
+                  </button>
+                  <button class="btn btn-outline-secondary w-100" data-bs-toggle="modal" data-bs-target="#firstAidModal">
+                    <i class="bi bi-info-circle"></i> View First Aid Instructions
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Calculator -->
+    <section id="calculator" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ambulance Cost Calculator</h2>
+          <p class="text-muted">Estimate the cost for your medical transportation needs</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="calculator-container">
+              <div class="mb-4">
+                <label class="form-label fw-bold">Service Type</label>
+                <select class="form-select" id="serviceType">
+                  <option value="basic">Basic Life Support</option>
+                  <option value="advanced">Advanced Life Support</option>
+                  <option value="neonatal">Neonatal Transport</option>
+                  <option value="air">Air Ambulance</option>
+                  <option value="mortuary">Mortuary Service</option>
+                </select>
+              </div>
+              
+              <div class="mb-4">
+                <label class="form-label fw-bold">Distance (in km)</label>
+                <input type="range" class="form-range" min="5" max="200" step="5" id="distanceRange" value="20">
+                <div class="d-flex justify-content-between">
+                  <span>5 km</span>
+                  <span id="distanceValue">20 km</span>
+                  <span>200 km</span>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <label class="form-label fw-bold">Additional Services</label>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="oxygen">
+                  <label class="form-check-label" for="oxygen">Oxygen Supply (₹200)</label>
+                </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="paramedic">
+                  <label class="form-check-label" for="paramedic">Extra Paramedic (₹500)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="night">
+                  <label class="form-check-label" for="night">Night Service (10pm-6am) (₹300)</label>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary w-100" id="calculatePrice">
+                <i class="bi bi-calculator"></i> Calculate Estimated Cost
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="calculator-result">
+              <h3>Estimated Cost</h3>
+              <div class="price-display" id="priceResult">₹0</div>
+              <p class="mt-3">This estimate includes base fare, distance charges, and selected additional services.</p>
+              
+              <div class="mt-4">
+                <p><i class="bi bi-info-circle me-2"></i> Base fare: <span id="baseFare">₹0</span></p>
+                <p><i class="bi bi-info-circle me-2"></i> Distance charges: <span id="distanceFare">₹0</span></p>
+                <p><i class="bi bi-info-circle me-2"></i> Additional services: <span id="additionalFare">₹0</span></p>
+                <hr class="my-3 bg-light">
+                <p class="fw-bold">Total estimated cost: <span id="totalFare">₹0</span></p>
+              </div>
+              
+              <button class="btn btn-outline-light mt-4 w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                <i class="bi bi-check-circle"></i> Confirm Booking
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Our Emergency Team</h2>
+          <p class="text-muted">Available 24/7 for immediate assistance and support</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-4 animate-on-scroll">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body text-center p-4">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                  <i class="bi bi-telephone fs-1"></i>
+                </div>
+                <h5>Emergency Hotline</h5>
+                <p class="mb-1">Available 24 hours, 7 days a week</p>
+                <a href="tel:8008280020" class="btn btn-link text-decoration-none fs-4 fw-bold">80082 80020</a>
+                <p class="mt-3">For non-emergency inquiries, call: <a href="tel:06152223456" class="text-decoration-none">06152-223456</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 animate-on-scroll">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body text-center p-4">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                  <i class="bi bi-geo-alt fs-1"></i>
+                </div>
+                <h5>Our Locations</h5>
+                <address class="mb-0">
+                  <strong>Headquarters</strong><br>
+                  Medical Complex, Station Road<br>
+                  Chapra, Saran - 841301<br>
+                  Bihar, India
+                </address>
+                <hr class="my-3">
+                <address class="mb-0">
+                  <strong>Regional Center</strong><br>
+                  Near District Hospital<br>
+                  Siwan, Saran - 841226<br>
+                  Bihar, India
+                </address>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 animate-on-scroll">
+            <div class="card h-100 border-0 shadow">
+              <div class="card-body text-center p-4">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                  <i class="bi bi-envelope fs-1"></i>
+                </div>
+                <h5>Email & Support</h5>
+                <p>For inquiries, feedback, or partnership opportunities</p>
+                <a href="mailto:support@saranambulance.in" class="btn btn-link text-decoration-none">support@saranambulance.in</a>
+                <div class="mt-4">
+                  <h6>Operational Hours</h6>
+                  <p class="mb-0">Emergency Services: 24/7</p>
+                  <p class="mb-0">Administrative Office: 8AM-8PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h4 class="text-white mb-4"><i class="bi bi-ambulance me-2"></i>Saran Ambulance</h4>
+            <p>Providing life-saving emergency medical transportation across Saran District since 2010. Committed to rapid response and quality patient care.</p>
+            <div class="social-links mt-4">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+          
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tracking">Live Tracking</a></li>
+                <li><a href="#calculator">Price Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4">
+            <div class="footer-links">
+              <h5>Our Services</h5>
+              <ul>
+                <li><a href="#">Basic Life Support</a></li>
+                <li><a href="#">Advanced Life Support</a></li>
+                <li><a href="#">Neonatal Transport</a></li>
+                <li><a href="#">Air Ambulance</a></li>
+                <li><a href="#">Mortuary Services</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4">
+            <div class="footer-links">
+              <h5>Coverage Areas</h5>
+              <ul>
+                <li><a href="#">Chapra</a></li>
+                <li><a href="#">Siwan</a></li>
+                <li><a href="#">Gopalganj</a></li>
+                <li><a href="#">Hajipur</a></li>
+                <li><a href="#">Sonepur</a></li>
+                <li><a href="#">Marhaura</a></li>
+                <li><a href="#">Revelganj</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="copyright">
+          <p class="mb-0">&copy; 2023 Saran Ambulance Service. All rights reserved.</p>
+          <p class="mb-0">Designed with <i class="bi bi-heart-fill text-danger"></i> for the people of Saran District</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918008280020" target="_blank" class="whatsapp-float">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="bi bi-ambulance me-2"></i> Book Emergency Ambulance</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Service Type</label>
+                  <select class="form-select">
+                    <option>Basic Life Support</option>
+                    <option>Advanced Life Support</option>
+                    <option>Neonatal Transport</option>
+                    <option>Air Ambulance</option>
+                    <option>Mortuary Service</option>
+                  </select>
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">Urgency Level</label>
+                  <select class="form-select">
+                    <option>Emergency (Immediate)</option>
+                    <option>Urgent (Within 1 hour)</option>
+                    <option>Scheduled (Pre-booked)</option>
+                  </select>
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">Pickup Location</label>
+                  <input type="text" class="form-control" placeholder="Enter pickup address" id="pickupLocation">
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">Destination</label>
+                  <input type="text" class="form-control" placeholder="Enter destination" id="destination">
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">Patient Name</label>
+                  <input type="text" class="form-control" placeholder="Full name">
+                </div>
+                
+                <div class="col-md-6">
+                  <label class="form-label">Contact Number</label>
+                  <input type="tel" class="form-control" placeholder="Mobile number">
+                </div>
+                
+                <div class="col-12">
+                  <label class="form-label">Medical Condition</label>
+                  <textarea class="form-control" rows="3" placeholder="Describe the patient's condition and any special requirements"></textarea>
+                </div>
+                
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms">
+                    <label class="form-check-label" for="terms">
+                      I understand this is an emergency service and agree to the terms of service
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Confirm Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Aid Modal -->
+    <div class="modal fade" id="firstAidModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title"><i class="bi bi-first-aid me-2"></i> First Aid Instructions</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="firstAidContent">
+              <p class="text-center"><i class="bi bi-heart-pulse display-4 text-danger"></i></p>
+              <h5 class="text-center">Select symptoms to view first aid instructions</h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Back to top button
+      const backToTopButton = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Scroll animation
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Distance slider
+      const distanceRange = document.getElementById('distanceRange');
+      const distanceValue = document.getElementById('distanceValue');
+      
+      distanceRange.addEventListener('input', () => {
+        distanceValue.textContent = `${distanceRange.value} km`;
+      });
+      
+      // Pricing calculator
+      document.getElementById('calculatePrice').addEventListener('click', () => {
+        const serviceType = document.getElementById('serviceType').value;
+        const distance = parseInt(distanceRange.value);
+        const oxygen = document.getElementById('oxygen').checked;
+        const paramedic = document.getElementById('paramedic').checked;
+        const night = document.getElementById('night').checked;
+        
+        let baseFare = 0;
+        let perKm = 0;
+        
+        switch(serviceType) {
+          case 'basic':
+            baseFare = 800;
+            perKm = 25;
+            break;
+          case 'advanced':
+            baseFare = 1500;
+            perKm = 40;
+            break;
+          case 'neonatal':
+            baseFare = 2000;
+            perKm = 45;
+            break;
+          case 'air':
+            baseFare = 50000;
+            perKm = 300;
+            break;
+          case 'mortuary':
+            baseFare = 1200;
+            perKm = 30;
+            break;
+        }
+        
+        let distanceFare = distance * perKm;
+        let additionalFare = 0;
+        
+        if (oxygen) additionalFare += 200;
+        if (paramedic) additionalFare += 500;
+        if (night) additionalFare += 300;
+        
+        const totalFare = baseFare + distanceFare + additionalFare;
+        
+        // Update display
+        document.getElementById('baseFare').textContent = `₹${baseFare}`;
+        document.getElementById('distanceFare').textContent = `₹${distanceFare}`;
+        document.getElementById('additionalFare').textContent = `₹${additionalFare}`;
+        document.getElementById('totalFare').textContent = `₹${totalFare}`;
+        document.getElementById('priceResult').textContent = `₹${totalFare}`;
+      });
+      
+      // Symptom checker
+      document.getElementById('analyzeSymptoms').addEventListener('click', () => {
+        const symptoms = [];
+        if (document.getElementById('chestPain').checked) symptoms.push('chest-pain');
+        if (document.getElementById('breathing').checked) symptoms.push('breathing');
+        if (document.getElementById('bleeding').checked) symptoms.push('bleeding');
+        if (document.getElementById('stroke').checked) symptoms.push('stroke');
+        if (document.getElementById('head').checked) symptoms.push('head');
+        
+        const resultDiv = document.getElementById('recommendationResult');
+        const alertDiv = document.getElementById('emergencyAlert');
+        const actionButtons = document.getElementById('actionButtons');
+        
+        if (symptoms.length === 0) {
+          resultDiv.innerHTML = `
+            <div class="text-center py-5">
+              <i class="bi bi-exclamation-circle display-4 text-warning mb-3"></i>
+              <h5>No symptoms selected</h5>
+              <p class="text-muted">Please select at least one symptom to get a recommendation</p>
+            </div>
+          `;
+          alertDiv.style.display = 'none';
+          actionButtons.style.display = 'none';
+          return;
+        }
+        
+        // Critical symptoms detection
+        const criticalSymptoms = ['chest-pain', 'breathing', 'stroke', 'head'];
+        const isCritical = symptoms.some(symptom => criticalSymptoms.includes(symptom));
+        
+        if (isCritical) {
+          alertDiv.style.display = 'block';
+          resultDiv.innerHTML = `
+            <div class="alert alert-danger">
+              <h5><i class="bi bi-exclamation-triangle-fill"></i> Critical Symptoms Detected!</h5>
+              <p>Based on the symptoms you've selected, this appears to be a medical emergency. Our system has detected potential life-threatening conditions including:</p>
+              <ul>
+                ${symptoms.includes('chest-pain') ? '<li>Possible heart attack</li>' : ''}
+                ${symptoms.includes('breathing') ? '<li>Respiratory distress</li>' : ''}
+                ${symptoms.includes('stroke') ? '<li>Stroke symptoms</li>' : ''}
+                ${symptoms.includes('head') ? '<li>Serious head injury</li>' : ''}
+              </ul>
+              <p class="mb-0">Do not delay medical attention. An ambulance has been alerted to your location.</p>
+            </div>
+          `;
+          actionButtons.style.display = 'block';
+        } else {
+          alertDiv.style.display = 'none';
+          resultDiv.innerHTML = `
+            <div class="alert alert-warning">
+              <h5><i class="bi bi-info-circle-fill"></i> Urgent Medical Attention Required</h5>
+              <p>Based on the symptoms you've selected, medical attention is recommended as soon as possible.</p>
+              <p>For severe bleeding:</p>
+              <ul>
+                <li>Apply direct pressure to the wound</li>
+                <li>Elevate the injured area if possible</li>
+                <li>Use a clean cloth or bandage</li>
+              </ul>
+              <p class="mb-0">We recommend contacting our emergency line or visiting the nearest medical facility.</p>
+            </div>
+          `;
+          actionButtons.style.display = 'block';
+        }
+      });
+      
+      // Call ambulance button
+      document.getElementById('callAmbulance').addEventListener('click', () => {
+        alert('Connecting to emergency dispatch... Please stay on the line.');
+        setTimeout(() => {
+          alert('Emergency services have been alerted. An ambulance is on its way to your location.');
+        }, 2000);
+      });
+      
+      // Initialize with some stats animation
+      window.addEventListener('load', () => {
+        // Animate response time
+        let time = 15;
+        const responseInterval = setInterval(() => {
+          document.getElementById('responseTime').textContent = `${time} min`;
+          time--;
+          if (time === 7) clearInterval(responseInterval);
+        }, 100);
+        
+        // Animate ambulance count
+        let count = 10;
+        const ambulanceInterval = setInterval(() => {
+          document.getElementById('ambulances').textContent = `${count}+`;
+          count++;
+          if (count === 43) clearInterval(ambulanceInterval);
+        }, 50);
+        
+        // Animate patient count
+        let patients = 10000;
+        const patientInterval = setInterval(() => {
+          document.getElementById('patients').textContent = `${patients}+`;
+          patients += 100;
+          if (patients === 15200) clearInterval(patientInterval);
+        }, 10);
+      });
+    </script>
+  </body>
+</html>
